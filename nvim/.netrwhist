@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/ethanpeterson/.config/nvim'
+let g:netrw_dirhist_2='/Users/ethanpeterson/Desktop/ship-it/internal'
+let g:netrw_dirhist_3='/Users/ethanpeterson/Desktop/miranda/terraform/role/web-lb'
