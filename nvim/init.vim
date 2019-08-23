@@ -22,9 +22,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'dense-analysis/ale'
+Plug 'mattn/emmet-vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " General Editor Configuration
@@ -38,6 +40,9 @@ au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
+
+" Do not copy things that are deleted
+nnoremap d "_d
 
 let g:deoplete#enable_at_startup = 1
 
@@ -58,6 +63,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" FZF
+nnoremap <silent> <leader>f :Files<cr>
+nnoremap <silent> <leader><space> :Buffers<cr>
 " Nerd Commenter Configuration
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
