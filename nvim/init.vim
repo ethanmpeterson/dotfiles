@@ -27,6 +27,7 @@ Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'zchee/deoplete-clang'
 call plug#end()
 
 " General Editor Configuration
@@ -40,6 +41,16 @@ au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
+
+" C Settings
+au FileType c set noexpandtab
+au FileType c set shiftwidth=4
+au FileType c set softtabstop=4
+au FileType c set tabstop=4
+
+let g:deoplete#sources#clang#libclang_path = "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
+let g:deoplete#sources#clang#clang_header = "/Library/Developer/CommandLineTools/usr/lib/clang"
+
 
 " Do not copy things that are deleted
 nnoremap d "_d
