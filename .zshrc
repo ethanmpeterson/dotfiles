@@ -2,22 +2,23 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ethanpeterson/.oh-my-zsh"
-eval "$(direnv hook zsh)"
+export ZSH="/home/ethan/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-export PATH=$PATH:/usr/local/kubebuilder/bin
+
 # Alias
-alias waws='aws-vault exec wattpad --'
 alias gitset='git push -u origin $(git symbolic-ref HEAD 2>/dev/null)'
 alias grd='git diff --no-ext-diff "${1:-origin/master}"..HEAD'
-#ZSH_THEME="robbyrussell"
+
+# GPU MANAGEMENT
+# NOTE: you must reboot after running the alias for changes to take effect
+alias switch-intel='optimus-manager --set-startup intel'
+alias switch-nvidia='optimus-manager --set-startup nvidia'
+
 ZSH_THEME="agnoster"
 USER=``
 # Set list of themes to pick from when loading at random
@@ -76,11 +77,11 @@ USER=``
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-zsh-syntax-highlighting
-zsh-autosuggestions
+	git
+	zsh-syntax-highlighting
+	zsh-autosuggestions
 )
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#a3a09e,bold,underline"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
