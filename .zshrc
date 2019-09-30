@@ -18,6 +18,10 @@ alias grd='git diff --no-ext-diff "${1:-origin/master}"..HEAD'
 # NOTE: you must reboot after running the alias for changes to take effect
 alias switch-intel='optimus-manager --set-startup intel'
 alias switch-nvidia='optimus-manager --set-startup nvidia'
+alias gpu-status='optimus-manager --status && cat /proc/acpi/bbswitch'
+
+# AUTORUN caps lock escape re bind
+setxkbmap -option caps:escape
 
 ZSH_THEME="agnoster"
 USER=``
